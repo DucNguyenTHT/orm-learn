@@ -17,6 +17,7 @@ createConnection({
 })
 .then((connection)=> {
   console.log(`create success`);
+  connection.close()
 })
 .catch((err)=> {
   console.log(err);
