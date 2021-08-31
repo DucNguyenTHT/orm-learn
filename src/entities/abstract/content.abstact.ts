@@ -1,6 +1,8 @@
-import { Column, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn, TableInheritance } from "typeorm";
 
-export abstract class ContentAbstractEntity {
+@Entity()
+@TableInheritance({column: { type: "varchar", name: "type"}})
+export class ContentAbstractEntity {
   @PrimaryGeneratedColumn()
   id:number;
 

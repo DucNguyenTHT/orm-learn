@@ -1,7 +1,7 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { ChildEntity, Column } from "typeorm";
 import { ContentAbstractEntity } from "./abstract/content.abstact";
 
-@Entity()
+@ChildEntity()
 export class QuestionEntity extends ContentAbstractEntity{
   @Column()
   answersCount: number;
