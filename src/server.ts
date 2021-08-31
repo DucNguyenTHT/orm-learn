@@ -1,5 +1,4 @@
 import { createConnection } from 'typeorm';
-import UserEntity from './entities/user.entity';
 
 createConnection({
   type: "mysql",
