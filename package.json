@@ -1,0 +1,16 @@
+{
+  "name": "leasson-3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@types/mysql": "^2.15.19",
+    "mysql": "^2.18.1",
+    "ts-node": "^10.2.1",
+    "typeorm": "^0.2.37",
+    "typescript": "^4.4.2"
+  },
+  "scripts": {
+    "start": "ts-node src/server.ts"
+  }
+}
