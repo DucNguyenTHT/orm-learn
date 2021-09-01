@@ -1,5 +1,7 @@
 import 'reflect-metadata';
-import { createConnection } from 'typeorm';
+import { createConnection, getRepository } from 'typeorm';
+import { CategoryEntity, ICategoryEntity } from './entities/Category.entity';
+import { IPostEntity, PostEntity } from './entities/Post.entity';
 
 createConnection({
   type: "mysql",
@@ -16,8 +18,27 @@ createConnection({
   ],
   synchronize: true,
 })
-.then((connection)=> {
-  console.log(`create success`);
+.then(async (connection)=> {
+  // console.log(`create success`);
+  const categoryRepository = getRepository<ICategoryEntity>(CategoryEntity);
+
+  const category1: Partial<ICategoryEntity> = {
+    name: "Orms"
+  }
+  const newCategory1 = await categoryRepository.save(category1);
+  const category2: Partial<ICategoryEntity> = {
+    name: "Programming"
+  }
+  const newCategory2 = await categoryRepository.save(category2);
+  
+  const postEntity1 = {
+    title: "Programming data post",
+    text: "Nohope text",
+    categories: newCategory1
+  }
+  const questionRepository = getRepository<IPostEntity>(PostEntity);
+  await questionRepository.save(postEntity1);
+
   connection.close();
 })
 .catch((err)=> {

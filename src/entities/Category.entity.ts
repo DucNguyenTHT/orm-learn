@@ -1,5 +1,6 @@
 import { EntitySchema } from "typeorm";
-interface ICategoryEntity {
+
+export interface ICategoryEntity {
   id: number;
   name: string;
 }

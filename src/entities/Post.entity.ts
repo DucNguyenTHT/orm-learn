@@ -1,13 +1,14 @@
-import { EntitySchema, EntitySchemaRelationOptions } from "typeorm";
+import { EntitySchema } from "typeorm";
+import { CategoryEntity, ICategoryEntity } from "./Category.entity";
 
-interface IPostEntitySchema {
+export interface IPostEntity {
   id: number;
   title: string;
   text: string;
-  categories: EntitySchemaRelationOptions
+  categories: (Partial<ICategoryEntity> & ICategoryEntity);
 }
 
-export const PostEntity = new EntitySchema<IPostEntitySchema>({
+export const PostEntity = new EntitySchema<IPostEntity>({
   name: "post",
   columns: {
     id: {
@@ -25,7 +26,7 @@ export const PostEntity = new EntitySchema<IPostEntitySchema>({
   relations: {
     categories: {
       type:"many-to-many",
-      target: 'category'
+      target: "category"
     }
   }
 })
