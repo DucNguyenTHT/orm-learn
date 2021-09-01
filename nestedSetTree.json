@@ -1,0 +1,32 @@
+[  
+  {
+    "id": 1,
+    "name": "a1",
+    "children": [
+      {
+        "id": 2,
+        "name": "a11",
+        "children": [
+          {
+            "id": 4,
+            "name": "a111",
+            "children": []
+          },
+          {
+            "id": 5,
+            "name": "a112",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "a12",
+        "children": []
+      }
+    ]
+  },
+  {
+    "no-multiple-root": true
+  }
+]

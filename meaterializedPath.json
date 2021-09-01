@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "name": "a1",
+    "children": [
+      {
+        "id": 2,
+        "name": "a11",
+        "children": [
+          {
+            "id": 4,
+            "name": "a111",
+            "children": []
+          },
+          {
+            "id": 5,
+            "name": "a112",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "a12",
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "a1",
+    "children": [
+      {
+        "id": 7,
+        "name": "a11",
+        "children": [
+          {
+            "id": 9,
+            "name": "a111",
+            "children": []
+          },
+          {
+            "id": 10,
+            "name": "a112",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "name": "a12",
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "a1",
+    "children": [
+      {
+        "id": 12,
+        "name": "a11",
+        "children": [
+          {
+            "id": 14,
+            "name": "a111",
+            "children": []
+          },
+          {
+            "id": 15,
+            "name": "a112",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "name": "a12",
+        "children": []
+      }
+    ]
+  },
+  {
+    "no-multiple-root": false
+  }
+]
