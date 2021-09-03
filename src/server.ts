@@ -1,4 +1,6 @@
-import { createConnection } from 'typeorm';
+import { Question } from './entities/question.entity';
+import { createConnection, getRepository } from 'typeorm';
+import { Category } from './entities/category.entity';
 
 createConnection({
   type: "mysql",
@@ -15,8 +17,24 @@ createConnection({
   ],
   synchronize: true,
 })
-.then((connection)=> {
-  console.log(`create success`);
+.then(async(connection)=> {
+  // const category1 = new Category();
+  // category1.name = "category1";
+  // await connection.manager.save(category1);
+  // const category2 = new Category();
+  // category2.name = "category2";
+  // await connection.manager.save(category2);
+
+  // const question = new Question();
+  // question.text = "categoryTesting";
+  // question.title = "category add in none inverse manytomany";
+  // question.categories = [category1,category2];
+  // const newQuest = await connection.manager.save(question);
+
+  const data = getRepository(Question);
+  const questions = await data.find({relations: ["categories"]});
+  console.log(JSON.stringify(questions));
+
   connection.close();
 })
 .catch((err)=> {
